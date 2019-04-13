@@ -1,4 +1,4 @@
-# Set username to consider a "default context", which will not be shown.
+# Set username to consider a "default context", which by default will not be shown.
 DEFAULT_USER='luca'
 
 # Set P9KGT background color, either 'light', 'dark' or 'dark-terminator' (this should match your terminal theme).
