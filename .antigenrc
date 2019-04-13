@@ -1,0 +1,152 @@
+# Set username to consider a "default context", which will not be shown.
+DEFAULT_USER='luca'
+
+# Set P9KGT background color, either 'light', 'dark' or 'dark-terminator' (this should match your terminal theme).
+P9KGT_BACKGROUND='dark'
+if [[ $P9KGT_BACKGROUND != 'light' ]] && [[ $P9KGT_BACKGROUND != 'dark' ]] && [[ $P9KGT_BACKGROUND != 'dark-terminator' ]]
+then
+    P9KGT_ERROR=true
+    echo "P9KGT error: variable 'P9KGT_BACKGROUND' should be either 'light', 'dark' or 'dark-terminator'"
+fi
+
+# Set P9KGT foreground colors scheme, either 'light', 'dark' or 'cool' (choose by preference).
+P9KGT_FOREGROUND='cool'
+if [[ $P9KGT_FOREGROUND != 'light' ]] && [[ $P9KGT_FOREGROUND != 'dark' ]] && [[ $P9KGT_FOREGROUND != 'cool' ]]
+then
+    P9KGT_ERROR=true
+    echo "P9KGT error: variable 'P9KGT_FOREGROUND' should be either 'light', 'dark' or 'cool'"
+fi
+
+# Set P9KGT fonts mode, either 'default', 'awesome-fontconfig', 'awesome-mapped-fontconfig', 'awesome-patched', 'nerdfont-complete' or 'nerdfont-fontconfig'.
+# See: https://github.com/bhilburn/powerlevel9k/wiki/About-Fonts
+P9KGT_FONTS='awesome-fontconfig'
+if [[ $P9KGT_FONTS != 'default' ]] && [[ $P9KGT_FONTS != 'awesome-fontconfig' ]] && [[ $P9KGT_FONTS != 'awesome-mapped-fontconfig' ]] &&
+    [[ $P9KGT_FONTS != 'awesome-patched' ]] && [[ $P9KGT_FONTS != 'nerdfont-complete' ]] && [[ $P9KGT_FONTS != 'nerdfont-fontconfig' ]]
+then
+    P9KGT_ERROR=true
+    echo "P9KGT error: variable 'P9KGT_FONTS' should be either 'default', 'awesome-fontconfig', 'awesome-mapped-fontconfig', 'awesome-patched', 'nerdfont-complete' or 'nerdfont-fontconfig'"
+else
+    P9K_MODE=$P9KGT_FONTS
+fi
+
+if [[ $P9KGT_ERROR != true ]]
+then
+
+    # Set P9KGT background color
+    if [[ $P9KGT_BACKGROUND == 'light' ]]
+    then
+        P9K_COLOR_SCHEME='light'
+        P9KGT_TERMINAL_BACKGROUND='grey100'
+    elif [[ $P9KGT_BACKGROUND == 'dark' ]]
+    then
+        P9K_COLOR_SCHEME='dark'
+        P9KGT_TERMINAL_BACKGROUND='grey19'
+    elif [[ $P9KGT_BACKGROUND == 'dark-terminator' ]]
+    then
+        P9K_COLOR_SCHEME='dark'
+        P9KGT_TERMINAL_BACKGROUND='grey3'
+    fi
+
+    # Set P9KGT foreground colors
+    if [[ $P9KGT_FOREGROUND == 'light' ]]
+    then
+        P9KGT_RED='lightred'
+        P9KGT_GREEN='lightgreen'
+        P9KGT_YELLOW='lightyellow';
+        P9KGT_BLUE='lightblue'
+    elif [[ $P9KGT_FOREGROUND == 'dark' ]]
+    then
+        P9KGT_RED='red'
+        P9KGT_GREEN='green'
+        P9KGT_YELLOW='yellow'
+        P9KGT_BLUE='blue'
+    elif [[ $P9KGT_FOREGROUND == 'cool' ]]
+    then
+        P9KGT_RED='red1'
+        P9KGT_GREEN='yellow3'
+        P9KGT_YELLOW='gold1';
+        P9KGT_BLUE='steelblue1'
+    fi
+
+    # Customize prompt.
+    P9K_PROMPT_ADD_NEWLINE=true
+    P9K_LEFT_PROMPT_ELEMENTS=(context dir_writable dir vcs)
+    P9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs)
+
+    # Set 'context' segment colors.
+    P9K_CONTEXT_DEFAULT_FOREGROUND=$P9KGT_YELLOW
+    P9K_CONTEXT_ROOT_FOREGROUND=$P9KGT_YELLOW
+    P9K_CONTEXT_SUDO_FOREGROUND=$P9KGT_YELLOW
+    P9K_CONTEXT_REMOTE_FOREGROUND=$P9KGT_YELLOW
+    P9K_CONTEXT_REMOTE_SUDO_FOREGROUND=$P9KGT_YELLOW
+    P9K_CONTEXT_DEFAULT_BACKGROUND=$P9KGT_TERMINAL_BACKGROUND
+    P9K_CONTEXT_ROOT_BACKGROUND=$P9KGT_TERMINAL_BACKGROUND
+    P9K_CONTEXT_SUDO_BACKGROUND=$P9KGT_TERMINAL_BACKGROUND
+    P9K_CONTEXT_REMOTE_BACKGROUND=$P9KGT_TERMINAL_BACKGROUND
+    P9K_CONTEXT_REMOTE_SUDO_BACKGROUND=$P9KGT_TERMINAL_BACKGROUND
+
+    # Set 'dir_writable' segment colors.
+    P9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND=$P9KGT_YELLOW
+    P9K_DIR_WRITABLE_FORBIDDEN_BACKGROUND=$P9KGT_RED
+
+    # Set 'dir' segment colors.
+    P9K_DIR_DEFAULT_FOREGROUND=$P9KGT_TERMINAL_BACKGROUND
+    P9K_DIR_HOME_FOREGROUND=$P9KGT_TERMINAL_BACKGROUND
+    P9K_DIR_HOME_SUBFOLDER_FOREGROUND=$P9KGT_TERMINAL_BACKGROUND
+    P9K_DIR_ETC_FOREGROUND=$P9KGT_TERMINAL_BACKGROUND
+    P9K_DIR_DEFAULT_BACKGROUND=$P9KGT_BLUE
+    P9K_DIR_HOME_BACKGROUND=$P9KGT_BLUE
+    P9K_DIR_HOME_SUBFOLDER_BACKGROUND=$P9KGT_BLUE
+    P9K_DIR_ETC_BACKGROUND=$P9KGT_BLUE
+
+    # Set 'vcs' segment colors.
+    P9K_VCS_CLEAN_FOREGROUND=$P9KGT_TERMINAL_BACKGROUND
+    P9K_VCS_MODIFIED_FOREGROUND=$P9KGT_TERMINAL_BACKGROUND
+    P9K_VCS_CLOBBERED_FOREGROUND=$P9KGT_TERMINAL_BACKGROUND
+    P9K_VCS_UNTRACKED_FOREGROUND=$P9KGT_TERMINAL_BACKGROUND
+    P9K_VCS_CLEAN_BACKGROUND=$P9KGT_GREEN
+    P9K_VCS_MODIFIED_BACKGROUND=$P9KGT_YELLOW
+    P9K_VCS_CLOBBERED_BACKGROUND=$P9KGT_RED
+    P9K_VCS_UNTRACKED_BACKGROUND=$P9KGT_GREEN
+
+    # Set 'status' segment colors.
+    P9K_STATUS_CROSS=true
+    P9K_STATUS_OK_FOREGROUND=$P9KGT_GREEN
+    P9K_STATUS_ERROR_FOREGROUND=$P9KGT_RED
+    P9K_STATUS_OK_BACKGROUND=$P9KGT_TERMINAL_BACKGROUND
+    P9K_STATUS_ERROR_BACKGROUND=$P9KGT_TERMINAL_BACKGROUND
+
+    # Set 'root_indicator' segment colors.
+    P9K_ROOT_INDICATOR_FOREGROUND=$P9KGT_YELLOW
+    P9K_ROOT_INDICATOR_BACKGROUND=$P9KGT_TERMINAL_BACKGROUND
+
+    # Set 'background_jobs' segment colors.
+    P9K_BACKGROUND_JOBS_FOREGROUND=$P9KGT_TERMINAL_BACKGROUND
+    P9K_BACKGROUND_JOBS_BACKGROUND=$P9KGT_YELLOW
+
+fi
+
+P9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
+
+antigen theme bhilburn/powerlevel9k powerlevel9k --branch=next
+
+antigen use oh-my-zsh
+
+antigen bundles <<EOBUNDLES
+
+    colored-man-pages
+    dirhistory
+    sudo
+    z
+
+    andrewferrier/fzf-z
+    zsh-users/zsh-autosuggestions
+    zsh-users/zsh-completions
+    #zsh-users/zsh-syntax-highlighting
+    zdharma/fast-syntax-highlighting
+    zsh-users/zsh-history-substring-search
+
+EOBUNDLES
+
+antigen apply
+
