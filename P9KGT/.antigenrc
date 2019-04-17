@@ -127,19 +127,21 @@ then
 fi
 
 P9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
-
 antigen theme bhilburn/powerlevel9k powerlevel9k --branch=next
 
 antigen use oh-my-zsh
 
 antigen bundles <<EOBUNDLES
 
+    # oh-my-zsh plugins
     colored-man-pages
     dirhistory
     sudo
     z
 
+    # other plugins
     andrewferrier/fzf-z
+    MichaelAquilina/zsh-you-should-use
     zsh-users/zsh-autosuggestions
     zsh-users/zsh-completions
     #zsh-users/zsh-syntax-highlighting
