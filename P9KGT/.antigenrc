@@ -157,6 +157,8 @@ antigen bundles <<EOBUNDLES
     # other plugins
     # https://github.com/andrewferrier/fzf-z
     andrewferrier/fzf-z
+    # https://github.com/desyncr/auto-ls
+    desyncr/auto-ls
     # https://github.com/MichaelAquilina/zsh-you-should-use
     MichaelAquilina/zsh-you-should-use
     # https://github.com/zsh-users/zsh-autosuggestions
