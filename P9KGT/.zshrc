@@ -5,8 +5,9 @@ source /etc/profile.d/vte.sh
 export EDITOR=nvim
 export VISUAL=nvim
 
-# https://github.com/chriskempson/base16-shell#bashzsh
+# https://github.com/bhilburn/powerlevel9k/wiki/Show-Off-Your-Config#p9kgt
 BASE16_SHELL_SET_BACKGROUND=false
+# https://github.com/chriskempson/base16-shell#bashzsh
 BASE16_SHELL="$HOME/Documents/pkg/base16-shell"
 [ -n "$PS1" ] && \
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
