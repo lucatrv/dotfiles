@@ -27,3 +27,13 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+# alias
+alias l='exa -a --group-directories-first'
+alias ll='exa -alG --group-directories-first'
+alias lt='exa -aT --group-directories-first'
+alias f='fd -H'
+alias c=bat
+alias v=nvim
+alias g='grep -i'
+alias ul='sudo updatedb && locate -i'
+
