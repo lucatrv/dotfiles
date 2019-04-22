@@ -41,8 +41,13 @@ alias l='exa -a --group-directories-first'
 alias ll='exa -alG --group-directories-first'
 alias lt='exa -aT --group-directories-first'
 alias f='fd -H'
-alias c=bat
+alias b=bat
 alias v=nvim
+alias d='nvim -d'
 alias g='grep -i'
 alias ul='sudo updatedb && locate -i'
+alias df='df -h'
+alias du='du -ch'
+alias free='free -h'
+alias dmesg='dmesg -HL'
 
