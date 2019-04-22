@@ -2,12 +2,12 @@
 # https://github.com/bhilburn/powerlevel9k/blob/next/segments/context/README.md
 DEFAULT_USER='luca'
 
-# Set P9KGT background color, either 'light', 'dark' or 'dark-terminator' (this should match your terminal theme).
+# Set P9KGT background color, either 'light' or 'dark' (this should match the GNOME Terminal's theme).
 P9KGT_BACKGROUND='dark'
-if [[ $P9KGT_BACKGROUND != 'light' ]] && [[ $P9KGT_BACKGROUND != 'dark' ]] && [[ $P9KGT_BACKGROUND != 'dark-terminator' ]]
+if [[ $P9KGT_BACKGROUND != 'light' ]] && [[ $P9KGT_BACKGROUND != 'dark' ]]
 then
     P9KGT_ERROR=true
-    echo "P9KGT error: variable 'P9KGT_BACKGROUND' should be either 'light', 'dark' or 'dark-terminator'"
+    echo "P9KGT error: variable 'P9KGT_BACKGROUND' should be either 'light' or 'dark'"
 fi
 
 # Set P9KGT foreground colors scheme, either 'light', 'dark' or 'cool' (choose by preference).
@@ -43,10 +43,6 @@ then
     then
         P9K_COLOR_SCHEME='dark'
         P9KGT_TERMINAL_BACKGROUND='grey19'
-    elif [[ $P9KGT_BACKGROUND == 'dark-terminator' ]]
-    then
-        P9K_COLOR_SCHEME='dark'
-        P9KGT_TERMINAL_BACKGROUND='grey3'
     fi
 
     # Set P9KGT foreground colors
