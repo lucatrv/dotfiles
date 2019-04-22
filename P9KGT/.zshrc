@@ -13,15 +13,6 @@ BASE16_SHELL="$HOME/Documents/pkg/base16-shell"
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
 
-# https://wiki.archlinux.org/index.php/fzf#zsh
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
-# https://github.com/junegunn/fzf#layout
-export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
-# https://github.com/junegunn/fzf#respecting-gitignore
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
 # https://github.com/desyncr/auto-ls#customization
 auto-ls-exa () {
   exa -a --group-directories-first
@@ -35,6 +26,15 @@ AUTO_LS_CHPWD=false
 source $HOME/Documents/pkg/antigen/antigen.zsh
 # https://github.com/zsh-users/antigen/wiki/Commands#antigen-init
 antigen init $HOME/.antigenrc
+
+# https://wiki.archlinux.org/index.php/fzf#zsh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+# https://github.com/junegunn/fzf#layout
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+# https://github.com/junegunn/fzf#respecting-gitignore
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # alias
 alias l='exa -a --group-directories-first'
