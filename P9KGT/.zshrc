@@ -13,6 +13,9 @@ BASE16_SHELL="$HOME/Documents/pkg/base16-shell"
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
 
+# https://github.com/bhilburn/powerlevel9k/wiki/Show-Off-Your-Config#p9kgt
+source $HOME/.p9kgt
+
 # https://github.com/desyncr/auto-ls#customization
 auto-ls-exa () {
   exa -a --group-directories-first
@@ -37,17 +40,31 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # alias
-alias l='exa -a --group-directories-first'
-alias ll='exa -alG --group-directories-first'
-alias lt='exa -aT --group-directories-first'
+alias l='exa --group-directories-first'
+alias la='exa -a --group-directories-first'
+alias ll='exa -lG --group-directories-first'
+alias lla='exa -alG --group-directories-first'
+alias lt='exa -T --group-directories-first'
+alias lta='exa -aT --group-directories-first'
 alias f='fd -H'
 alias b=bat
-alias v=nvim
+alias e=nvim
+alias se='sudo nvim'
+alias v='nvim -M'
 alias d='nvim -d'
-alias g='grep -i'
+alias g='grep -i --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 alias ul='sudo updatedb && locate -i'
 alias df='df -h'
 alias du='du -ch'
 alias free='free -h'
 alias dmesg='dmesg -HL'
+alias cp='cp -vi'
+alias mv='mv -vi'
+alias rm='rm -vI'
+alias ln='ln -vi'
+alias md='mkdir -v'
+alias rd='rmdir -v'
+alias _=sudo
+alias __='sudo $(fc -ln -1)'
+alias :q=exit
 
