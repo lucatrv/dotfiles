@@ -13,7 +13,7 @@ then
     echo "P9KGT error: variable 'P9KGT_BACKGROUND' should be either 'light' or 'dark'"
 fi
 
-# Set P9KGT colors scheme, either 'light', 'dark' or 'bright' (choose by preference).
+# Set P9KGT color scheme, either 'light', 'dark' or 'bright' (choose by preference).
 P9KGT_COLORS='bright'
 if [[ $P9KGT_COLORS != 'light' ]] && [[ $P9KGT_COLORS != 'dark' ]] && [[ $P9KGT_COLORS != 'bright' ]]
 then
