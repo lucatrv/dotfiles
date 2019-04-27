@@ -26,7 +26,7 @@ AUTO_LS_NEWLINE=false
 AUTO_LS_CHPWD=false
 
 # https://github.com/zsh-users/antigen/wiki/Quick-start#load-antigen-in-your-current-shell
-source $HOME/Documents/pkg/antigen/antigen.zsh
+source $HOME/antigen/antigen.zsh
 # https://github.com/zsh-users/antigen/wiki/Commands#antigen-init
 antigen init $HOME/.antigenrc
 
