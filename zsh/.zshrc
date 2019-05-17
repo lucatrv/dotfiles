@@ -39,16 +39,16 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-# alias
-alias ls='exa --group-directories-first'
-alias l='exa --group-directories-first'
-alias la='exa -a --group-directories-first'
-alias ll='exa -l --group-directories-first'
-alias lla='exa -al --group-directories-first'
-alias lal='exa -al --group-directories-first'
-alias lt='exa -T --group-directories-first'
-alias lta='exa -aT --group-directories-first'
-alias lat='exa -aT --group-directories-first'
+# https://gist.github.com/anonymous/a9055e30f97bd19645c2
+alias ls='exa --group-directories-first --classify'
+alias l='exa --group-directories-first --classify'
+alias la='exa -a --group-directories-first --classify'
+alias ll='exa -l --group-directories-first --classify'
+alias lla='exa -al --group-directories-first --classify'
+alias lal='exa -al --group-directories-first --classify'
+alias lt='exa -T --group-directories-first --classify'
+alias lta='exa -aT --group-directories-first --classify'
+alias lat='exa -aT --group-directories-first --classify'
 alias f='fd -H'
 alias c='bat -p'
 alias e=nvim
@@ -64,12 +64,14 @@ alias df='df -h'
 alias du='du -ch'
 alias free='free -h'
 alias dmesg='dmesg -HL'
-alias cp='cp -iv'
-alias mv='mv -iv'
-alias rm='rm -Iv'
-alias ln='ln -iv'
-alias md='mkdir -pv'
-alias rd='rmdir -v'
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -I'
+# http://zsh.sourceforge.net/Doc/Release/Options.html#index-RMSTARSILENT
+setopt rmstarsilent
+alias ln='ln -i'
+alias md='mkdir -p'
+alias rd='rmdir'
 alias _=sudo
 alias __='sudo $(fc -ln -1)'
 alias :q=exit
