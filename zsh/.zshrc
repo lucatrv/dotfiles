@@ -18,7 +18,7 @@ source $HOME/.p9kgt
 
 # https://github.com/desyncr/auto-ls#customization
 auto-ls-exa () {
-  exa -a --group-directories-first
+  exa -a --group-directories-first --classify
 }
 # https://github.com/desyncr/auto-ls#configuration
 AUTO_LS_COMMANDS=(exa)
