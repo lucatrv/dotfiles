@@ -54,7 +54,7 @@ alias f='fd -H'
 alias g='rg -iuuuu'
 alias e=nvim
 alias se='sudo nvim'
-alias v='nvim -M'
+alias v='/usr/share/nvim/runtime/macros/less.sh'
 alias d='nvim -d'
 alias p='ps -eF'
 alias pg='ps=$(ps -eF); head -1 <<< "$ps"; grep -v "grep -v" <<< "$ps" | grep -i --color=auto'
