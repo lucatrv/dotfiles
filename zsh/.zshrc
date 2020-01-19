@@ -1,4 +1,4 @@
-# https://unix.stackexchange.com/questions/93476/gnome-terminal-keep-track-of-directory-in-new-tab/93477#93477
+# https://gnunn1.github.io/tilix-web/manual/vteconfig/
 source /etc/profile.d/vte.sh
 
 # https://wiki.archlinux.org/index.php/Neovim#Replacing_vi_and_vim_with_neovim
